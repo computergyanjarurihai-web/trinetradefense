@@ -114,7 +114,11 @@ section{padding-block:72px;border-top:1px solid var(--line)}
 .team h3{font-size:26px}
 .team .role{font-family:var(--mono);font-size:13px;color:var(--saffron);margin-top:4px}
 .team p.bio{color:var(--mute);margin-top:12px;max-width:40em}
-@media (max-width:560px){.team{grid-template-columns:1fr}}
+.teamgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.teamgrid .team{grid-template-columns:auto 1fr;align-items:start;min-width:0}
+.teamgrid .avatar{width:76px;height:76px;font-size:28px}
+@media (max-width:860px){.teamgrid{grid-template-columns:1fr}}
+@media (max-width:560px){.team,.teamgrid .team{grid-template-columns:1fr}}
 
 /* contact */
 .contact{display:grid;grid-template-columns:1fr 1.1fr;gap:48px}
@@ -289,12 +293,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <div class="label">Leadership</div>
         <h2>Space science experience, Indian mission</h2>
       </div>
-      <div class="team">
-        <div class="avatar">DK</div>
-        <div>
-          <h3>Dr. Kumar</h3>
-          <div class="role">Co-founder &amp; Chief Scientist · Former NASA scientist</div>
-          <p class="bio">Dr. Kumar brings experience from NASA to TRINETRA's space and sensing technology, and guides the team's research in satellite data and AI-based detection.</p>
+      <div class="teamgrid">
+        <div class="team">
+          <div class="avatar">KT</div>
+          <div>
+            <h3>Kailash Chandra Thakur</h3>
+            <div class="role">Founder &amp; CEO</div>
+            <p class="bio">Kailash Chandra Thakur leads TRINETRA's vision, partnerships and growth, with a mission to give Bharat a home-grown, AI-powered security network.</p>
+          </div>
+        </div>
+        <div class="team">
+          <div class="avatar">DK</div>
+          <div>
+            <h3>Dr. Kumar</h3>
+            <div class="role">Co-founder &amp; Chief Scientist · Former NASA scientist</div>
+            <p class="bio">Dr. Kumar brings experience from NASA to TRINETRA's space and sensing technology, and guides the team's research in satellite data and AI-based detection.</p>
+          </div>
         </div>
       </div>
     </div>
