@@ -131,6 +131,27 @@ textarea{min-height:110px;resize:vertical}
 .out pre{white-space:pre-wrap;font-family:var(--mono);font-size:13px;margin:0;color:var(--ink)}
 @media (max-width:760px){.contact{grid-template-columns:1fr}.row{grid-template-columns:1fr}}
 
+/* research */
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.rgrid>*{min-width:0}
+.patent{display:grid;gap:10px;padding:24px;border:1px solid var(--line);border-left:3px solid var(--saffron);border-radius:6px;background:var(--panel)}
+.patent b{font-family:var(--display);font-size:28px;letter-spacing:.04em;color:var(--saffron)}
+.patent p{color:var(--mute);font-size:15px}
+.rlist{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.rlist li{display:grid;gap:4px;padding-bottom:16px;border-bottom:1px dashed var(--line)}
+.rlist h3{font-size:19px}
+.rlist p{color:var(--mute);font-size:15px}
+.sensors{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.sensors span{font-family:var(--mono);font-size:12px;border:1px solid var(--line);border-radius:999px;padding:5px 12px;color:var(--ink)}
+.algo{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-top:40px}
+.algo div{background:var(--night);padding:24px;display:grid;gap:6px;align-content:start}
+.algo .k{font-family:var(--mono);font-size:12px;color:var(--saffron);letter-spacing:.12em}
+.algo h3{font-size:20px}
+.algo p{color:var(--mute);font-size:15px}
+figure{margin:0;display:grid;gap:10px}
+figure img{width:100%;height:auto;border-radius:6px;background:#fff;padding:8px;display:block}
+figcaption{font-size:13px;color:var(--mute)}
+@media (max-width:860px){.rgrid,.algo{grid-template-columns:1fr}}
 footer{border-top:1px solid var(--line);padding-block:28px;color:var(--mute);font-size:13px}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 </style>
@@ -141,6 +162,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap">
     <a class="brand" href="#top"><i></i>TRINETRA</a>
     <ul>
+      <li><a href="#research">Research</a></li>
       <li><a href="#layers">Technology</a></li>
       <li><a href="#how">How it works</a></li>
       <li><a href="#uses">Applications</a></li>
@@ -186,6 +208,50 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       </div>
     </div>
   </div>
+
+  <section id="research">
+    <div class="wrap">
+      <div class="head">
+        <div class="label">Research foundation · Project MUSSTI</div>
+        <h2>Multi-Sensor Surveillance Using Sensor Fusion</h2>
+        <p>TRINETRA is built on a research programme led by Dr. Kumar Krishen, a former NASA scientist. Its goal is to remotely sense stationary and moving objects for national safety and security, even when they are camouflaged, hidden under forest or shrubs, or in terrain that people cannot reach.</p>
+      </div>
+
+      <div class="rgrid">
+        <div style="display:grid;gap:24px">
+          <div class="patent">
+            <span class="label">The origin</span>
+            <b>US Patent 5,005,147</b>
+            <p>"Method and Apparatus for Sensor Fusion", granted in 1991 to the United States as represented by the NASA Administrator. Inventors: Kumar Krishen, Scott W. Shaw and Rui J. P. de Figueiredo. The method fuses optical and radar data to reconstruct the shape of an unknown surface at a distance.</p>
+          </div>
+          <ul class="rlist">
+            <li><h3>Physics-based fusion</h3><p>Algorithms based on how waves scatter and emit across the electromagnetic spectrum combine data from many sensors.</p></li>
+            <li><h3>More information, less uncertainty</h3><p>Combined sensors tell us more about a scene than any single sensor, which improves accuracy.</p></li>
+            <li><h3>Vision in bad conditions</h3><p>Works at night and through cloud, fog, drizzle and light rain or snow. Weather readings are used to fine-tune detection.</p></li>
+          </ul>
+        </div>
+        <div style="display:grid;gap:20px">
+          <div>
+            <span class="label">Sensors in the programme</span>
+            <div class="sensors">
+              <span>Synthetic Aperture Radar</span><span>LIDAR / LADAR</span><span>Scatterometer</span><span>Polarimeter</span><span>Microwave radiometer</span><span>Time-domain sensor</span><span>Infrared</span><span>Visible band</span><span>Monostatic &amp; bistatic</span>
+            </div>
+          </div>
+          <figure>
+            <img src="fusion-study.jpg" alt="An optical NDVI image and a VH radar image combined into one fused image" loading="lazy" width="1400" height="786">
+            <figcaption>Early result: optical and radar satellite images fused into one. From data fusion studies completed at IIT Roorkee under Prof. Dharmendra Singh, using ISRO aircraft data (L- and S-band SAR) and Sentinel satellite data (C-band SAR).</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="algo">
+        <div><span class="k">ALGORITHM · DKOS</span><h3>Document Known Objects &amp; Scenes</h3><p>Ground data and photos of known situations teach the system attributes such as size, shape, signature strength, surroundings, people and weapons.</p></div>
+        <div><span class="k">ALGORITHM · IUOS</span><h3>Identify Unknown Objects &amp; Scenes</h3><p>Live sensor data is compared with the known library. A deep-learning decision module answers what it is, when it appeared and where it is.</p></div>
+        <div><span class="k">METHODS</span><h3>Detection toolkit</h3><p>Physics-based models, deep learning and neural networks, fuzzy logic, and wavelet analysis for compression, denoising and feature extraction.</p></div>
+        <div><span class="k">DISPLAY</span><h3>Augmented reality for decision makers</h3><p>Identified objects are shown at their location in real video or photo surroundings, so commanders see the situation at a glance.</p></div>
+      </div>
+    </div>
+  </section>
 
   <section id="layers">
     <div class="wrap">
@@ -305,9 +371,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <div class="team">
           <div class="avatar">DK</div>
           <div>
-            <h3>Dr. Kumar</h3>
+            <h3>Dr. Kumar Krishen</h3>
             <div class="role">Co-founder &amp; Chief Scientist · Former NASA scientist</div>
-            <p class="bio">Dr. Kumar brings experience from NASA to TRINETRA's space and sensing technology, and guides the team's research in satellite data and AI-based detection.</p>
+            <p class="bio">Recipient of the NASA Exceptional Service Medal and lead inventor of NASA's sensor fusion patent. Fellow of the Society for Design and Process Science, and Fellow and Distinguished Speaker of IETE. He leads TRINETRA's research in sensor fusion and AI-based detection.</p>
           </div>
         </div>
       </div>
